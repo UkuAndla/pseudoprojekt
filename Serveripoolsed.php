@@ -9,6 +9,7 @@
 <?php
 
 $foo = True;
+
 echo'uku'; echo'Andla'; echo'(21)';
 
 ?>

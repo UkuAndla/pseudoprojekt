@@ -1,3 +1,3 @@
 <?php
 echo'uku';
-echo'andla';
+echo'Andla';

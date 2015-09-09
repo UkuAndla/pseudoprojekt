@@ -1,2 +1,2 @@
 <?php
-echo'uku'; echo'Andla';  echo'(21)';
+echo'uku'; echo'Andla'; echo'(21)';

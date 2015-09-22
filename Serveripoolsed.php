@@ -38,6 +38,9 @@ var_dump($a);
 echo 'Hello ' . htmlspecialchars($_GET["terjer"]) . '!';
 ?>
 
+
+
+
 <form action="?" method="post">
     <input name="kass" placeholder="Kassitõug">
     <input type="submit">

@@ -25,5 +25,9 @@ $obj = new Obj('sug');
 $method_result = $obj->method('mees');
 ?>
 
+<?php if $_COOKIE['targ_lang']; ?> begins with $A OR $E OR $I OR $O OR $U; echo ‘n’; ?>
+
+
+
 </body>
 </html>

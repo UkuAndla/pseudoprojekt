@@ -19,6 +19,10 @@ var_dump($isik);
 if(substr($Submitted, 0) == "a", "e", "i", "o", "u", "õ", "ä", "ö", "ü";) {
     $vokaal = "True";
 } else { $vokaal = "False"; }
+
+
+$obj = new Obj('sug');
+$method_result = $obj->method('mees');
 ?>
 
 </body>

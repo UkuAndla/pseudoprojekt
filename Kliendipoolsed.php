@@ -39,7 +39,11 @@
                         });
                 })
 
-
+            <button id="hide">Rek'i Kass</button>
+    <script>
+            $("#hide").click(function(){
+                   $("img").toggle();
+               });
 
 
 </body>

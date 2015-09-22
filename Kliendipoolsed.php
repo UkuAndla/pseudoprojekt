@@ -29,13 +29,15 @@
 
 <button id="kustuta">Kaduv kass</button>
 <script>
-    <script>
-          $(document).ready(function(){
+    var pklick=false;
+            $("#klick").bind("click",function(){
+                    return pklick=true;
+                });
+            $(document).ready(function(){
                     $(document).on("contextmenu",function(){
-                            return false;
-                       });
+                            return pklick;
+                        });
                 })
-        </script>
 
 
 

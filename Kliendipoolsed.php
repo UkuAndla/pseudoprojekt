@@ -29,7 +29,16 @@
 
 <button id="kustuta">Kaduv kass</button>
 <script>
-    var pklick=false;
+    <script>
+          $(document).ready(function(){
+                    $(document).on("contextmenu",function(){
+                            return false;
+                       });
+                })
+        </script>
+
+
+
 
 </body>
 </html>

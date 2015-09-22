@@ -6,8 +6,10 @@
     <title>Kliendipoolsed</title>
 </head>
 <body>
+
 <button onclick="tereMaailm()">Tere Maailm</button>
 
+<a href="javascript:alertKHK()">Tere Maailm</a>
 
 </body>
 </html>

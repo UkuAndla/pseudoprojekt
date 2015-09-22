@@ -28,6 +28,12 @@ $method_result = $obj->method('mees');
 <?php if $_COOKIE['targ_lang']; ?> begins with $A OR $E OR $I OR $O OR $U; echo ‘n’; ?>
 
 
+<?php
+$a = 1,23+2.34;
+var_dump($a);
+?>
+
+
 
 </body>
 </html>

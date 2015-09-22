@@ -6,5 +6,8 @@
     <title>Kliendipoolsed</title>
 </head>
 <body>
+<button onclick="tereMaailm()">Tere Maailm</button>
+
+
 </body>
 </html>

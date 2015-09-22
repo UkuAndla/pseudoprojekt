@@ -34,6 +34,11 @@ var_dump($a);
 ?>
 
 
+<?php
+echo 'Hello ' . htmlspecialchars($_GET["terjer"]) . '!';
+?>
+
+
 
 </body>
 </html>

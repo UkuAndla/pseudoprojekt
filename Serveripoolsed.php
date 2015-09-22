@@ -12,6 +12,8 @@ $foo = True;
 
 echo'uku'; echo'Andla'; echo'(21)';
 
+$isik = arrry('uku','andla','21');
+var_dump($isik);
 ?>
 
 </body>

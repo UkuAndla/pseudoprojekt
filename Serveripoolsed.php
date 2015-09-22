@@ -16,8 +16,9 @@ $isik = arrry('uku','andla','21');
 var_dump($isik);
 
 
-substr( $string_n, 0 ) === "a", "e", "i", "o", "u", "õ", "ä", "ö", "ü";
-
+if(substr($Submitted, 0) == "a", "e", "i", "o", "u", "õ", "ä", "ö", "ü";) {
+    $vokaal = "True";
+} else { $vokaal = "False"; }
 ?>
 
 </body>

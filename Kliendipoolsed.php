@@ -16,6 +16,9 @@
 <a href="http://www.khk.ee" onclick="alert('J‰‰me siia!');return false;">J‰‰me siia</a>
 <br>
 
+<img id="pic" onclick="muuda()" width="200" height="235" src="http://www.thedailycat.com/health/advances/cat_identification/images/large.jpg">
+
+    <br>
 <img id="pilt" onclick="asendaKoer()" width="200" height="140" src="http://s.hswstatic.com/gif/whiskers-sam.jpg">
 <br>
 
@@ -23,6 +26,10 @@
 <button class="varv">Blue</button>
 <button class="varv">Green</button>
 <button id="rklick">Luba parem klıps</button>
+
+<button id="kustuta">Kaduv kass</button>
+<script>
+    var pklick=false;
 
 </body>
 </html>

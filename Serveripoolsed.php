@@ -32,7 +32,7 @@ $method_result = $obj->method('mees');
 $a = 1,23+2.34;
 var_dump($a);
 ?>
-
+dsada
 
 <?php
 echo 'Hello ' . htmlspecialchars($_GET["terjer"]) . '!';

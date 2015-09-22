@@ -19,5 +19,10 @@
 <img id="pilt" onclick="asendaKoer()" width="200" height="140" src="http://s.hswstatic.com/gif/whiskers-sam.jpg">
 <br>
 
+<button class="varv">Red</button>
+<button class="varv">Blue</button>
+<button class="varv">Green</button>
+<button id="rklick">Luba parem klõps</button>
+
 </body>
 </html>

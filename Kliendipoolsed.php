@@ -13,5 +13,9 @@
 
 <a href="http://www.khk.ee" onclick="alert('J‰‰me siia!');return false;">J‰‰me siia</a>
 <br>
+
+<img id="pilt" onclick="asendaKoer()" width="200" height="140" src="http://s.hswstatic.com/gif/whiskers-sam.jpg">
+<br>
+
 </body>
 </html>

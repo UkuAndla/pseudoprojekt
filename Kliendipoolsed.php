@@ -11,5 +11,7 @@
 
 <a href="javascript:alertKHK()">Tere Maailm</a>
 
+<a href="http://www.khk.ee" onclick="alert('Jääme siia!');return false;">Jääme siia</a>
+<br>
 </body>
 </html>

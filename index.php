@@ -1,16 +1,19 @@
 <?php
-$posts[]=array(
-        'title'=>'Man must explore, and this is exploration at its greatest',
-        'subtitle'=>'Problems look mighty small from 150 miles up',
-        'author'=>'Start Bootstrap',
-        'date'=>'September 24, 2014'
-);
-$posts[]=array(
-            'title'=>'I believe every human has a finite number of heartbeats.',
-            'subtitle'=>"I don't intend to waste any of mine.",
-            'author'=>'Start Bootstrap',
-            'date'=>'September 18, 2014')
-    ?>
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="blog";
+$conn = new mysqli($servername, $username, $password,$dbname);
+if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+$sql= "SELECT * FROM POSTS JOIN AUTHORS";
+$result=$conn->query($sql);
+if(mysqli_num_rows($result)>0){
+        while($row=mysqli_fetch_assoc($result)){
+                $posts[]=$row;
+            }
++}    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,10 +113,10 @@ $posts[]=array(
                             <?=$post['title']?>
                         </h2>
                         <h3 class="post-subtitle">
-                            <?=$post['subtitle']?>
+                            <?=$post['description']?>
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#"><?=$post['author']?></a> on <?=$post['date']?></p>
+                <p class="post-meta">Posted by <a href="#"><?=$post['name']?></a> on <?=$post['date']?></p>
 
             </div>
             <?endforeach?>

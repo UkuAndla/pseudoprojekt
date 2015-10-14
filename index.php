@@ -1,19 +1,14 @@
 <?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="blog";
-$conn = new mysqli($servername, $username, $password,$dbname);
+require('config.php');
+$db=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) or die(mysqli_error($db));
 if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-$sql= "SELECT * FROM POSTS JOIN AUTHORS";
-$result=$conn->query($sql);
-if(mysqli_num_rows($result)>0){
-        while($row=mysqli_fetch_assoc($result)){
-                $posts[]=$row;
-            }
-+}    ?>
+mysqli_query($db,"SET NAMES 'utf8'");
+$q= mysqli_query($db,"SELECT * FROM POSTS JOIN AUTHORS");
+while($row=mysqli_fetch_assoc($q)){
+ ?>
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,13 +105,13 @@ if(mysqli_num_rows($result)>0){
                 < class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                            <?=$post['title']?>
+                            <?=$post['post_title']?>
                         </h2>
                         <h3 class="post-subtitle">
-                            <?=$post['description']?>
+                            <?=$post['post_description']?>
                         </h3>
                     </a>
-                <p class="post-meta">Posted by <a href="#"><?=$post['name']?></a> on <?=$post['date']?></p>
+                <p class="post-meta">Posted by <a href="#"><?=$post['autor_name']?></a> on <?=$post['post_created']?></p>
 
             </div>
             <?endforeach?>

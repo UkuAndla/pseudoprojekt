@@ -1,15 +1,12 @@
 <?php
 require('config.php');
-$db=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) or die(mysqli_error($db));
-if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+$db=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) or die('Could not connect!');
 mysqli_query($db,"SET NAMES 'utf8'");
-$q= mysqli_query($db,"SELECT * FROM POSTS JOIN AUTHORS");
+$q= mysqli_query($db,"SELECT * FROM posts JOIN authors");
 while($row=mysqli_fetch_assoc($q)){
- ?>
+    $posts[]=$row;
 }
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,72 +34,72 @@ while($row=mysqli_fetch_assoc($q)){
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Sample Post</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Start Bootstrap</a>
         </div>
-        <!-- /.container -->
-    </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
-                    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="post.html">Sample Post</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1>
+                    <hr class="small">
+                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <?foreach($posts as $post):?>
+<!-- Main Content -->
+<div class="container">
+    <?foreach($posts as $post):?>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                < class="post-preview">
+                <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
                             <?=$post['post_title']?>
@@ -111,68 +108,67 @@ while($row=mysqli_fetch_assoc($q)){
                             <?=$post['post_description']?>
                         </h3>
                     </a>
-                <p class="post-meta">Posted by <a href="#"><?=$post['autor_name']?></a> on <?=$post['post_created']?></p>
-
+                    <p class="post-meta">Posted by <a href="#"><?=$post['author_name']?></a> on <?=$post['post_created']?></p>
+                </div>
             </div>
-            <?endforeach?>
-            <hr>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
-
         </div>
-    </div>
-
+    <?endforeach?>
     <hr>
+    <!-- Pager -->
+    <ul class="pager">
+        <li class="next">
+            <a href="#">Older Posts &rarr;</a>
+        </li>
+    </ul>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
-                </div>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
 
 </body>
 

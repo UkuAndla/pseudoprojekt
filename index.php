@@ -1,7 +1,7 @@
 lines (161 sloc)  6.25 KB
 <?php
 require('config.php');
-$db=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) or die(mysqli_error($db));
+$db=mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE) or die('Could not connect!');
 mysqli_query($db,"SET NAMES 'utf8'");
 $q= mysqli_query($db,"SELECT * FROM posts JOIN authors ON posts.author_id=authors.authors_id");
 while($row=mysqli_fetch_assoc($q)){

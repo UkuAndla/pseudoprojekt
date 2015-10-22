@@ -8,6 +8,7 @@ while($row=mysqli_fetch_assoc($q)){
 }
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>

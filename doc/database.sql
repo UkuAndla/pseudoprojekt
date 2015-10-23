@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `authors` (
 --
 
 INSERT INTO `authors` (`author_id`, `author_name`) VALUES
-  (1, 'Start Bootstrap');
+  (1, 'Uku Andla');
 
 -- --------------------------------------------------------
 

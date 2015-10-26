@@ -15,9 +15,9 @@
         <th onclick="Javascript:sortByColumn(this.cellIndex);">Email</th>
     </tr>
     <tr>
-        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,this.parentNode.cellIndex);"/></th>
-        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,this.parentNode.cellIndex);"/></th>
-        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,this.parentNode.cellIndex);"/></th>
+        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,'table',this.parentNode.cellIndex);"/></th>
+        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,'table',this.parentNode.cellIndex);"/></th>
+        <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,'table',this.parentNode.cellIndex);"/></th>
     </tr>
 </table>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js">
@@ -55,7 +55,7 @@
                 }
             }
         };
-        function filter(data,indeks){
+        function filter(data,idTable,indeks){
                     var search = data.value.toLowerCase().split(" ");
                     var indeks = indeks;
                     console.log(data);
@@ -72,7 +72,7 @@
                                            break;
                                         }
                                 }
-                            table.rows[i].style.display = displayStyle;
+                            tabel.rows[i].style.display = displayStyle;
                         };
                 };
     </script>
